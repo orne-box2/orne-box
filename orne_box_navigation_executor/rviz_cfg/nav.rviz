@@ -13,6 +13,7 @@ Panels:
         - /PointStamped2
         - /Path3
         - /Path4
+        - /Path5
       Splitter Ratio: 0.5
     Tree Height: 151
   - Class: rviz/Selection
@@ -499,7 +500,7 @@ Visualization Manager:
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
-      Color: 25; 255; 0
+      Color: 92; 53; 102
       Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
@@ -548,7 +549,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 23.363988876342773
+      Distance: 7.591248512268066
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
