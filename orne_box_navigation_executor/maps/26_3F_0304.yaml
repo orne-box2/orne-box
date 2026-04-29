@@ -1,0 +1,7 @@
+image: 26_3F_0304.pgm
+resolution: 0.050000
+origin: [-16.892064, -34.699928, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

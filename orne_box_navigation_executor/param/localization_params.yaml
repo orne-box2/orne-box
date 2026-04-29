@@ -1,3 +1,4 @@
 recovery_alpha_slow: 0.0
 recovery_alpha_fast: 0.0
-odom_alpha3: 0.8
+odom_alpha2: 0.25
+odom_alpha3: 1.05
