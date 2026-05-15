@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<library path="lib/libstraight_line_planner">
+  <class name="straight_line_planner/StraightLinePlanner" type="straight_line_planner::StraightLinePlanner" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>
+      A simple global planner that creates a straight line path between waypoints.
+    </description>
+  </class>
+</library>

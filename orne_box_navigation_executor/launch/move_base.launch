@@ -23,6 +23,8 @@
     <rosparam file="$(find orne_box_navigation_executor)/param/move_base_params.yaml" command="load"/>
     <rosparam file="$(find orne_box_navigation_executor)/param/global_planner.yaml" command="load"/>
     <!--param name="base_global_planner" value="global_planner/GlobalPlanner"/-->
+    <!--param name="base_global_planner" value="carrot_planner/CarrotPlanner"/-->
+    <!--param name="base_global_planner" value="straight_line_planner/StraightLinePlanner"/-->
     <!--rosparam file="$(find orne_box_navigation_executor)/param/dwa_local_planner_params.yaml" command="load"/-->
     <rosparam file="$(find orne_box_navigation_executor)/param/base_local_planner_params_box.yaml" command="load"/>
     <!--rosparam file="$(find orne_box_navigation_executor)/param/teb_config.yaml" command="load"/-->
