@@ -5,10 +5,10 @@ TrajectoryPlannerROS:
   
   #acc_lim_x: 2.5
   #acc_lim_theta: 0.8
-  max_vel_theta: 2.0
-  min_vel_theta: -2.0
+  max_vel_theta: 3.0
+  min_vel_theta: -3.0
 
-  yaw_goal_tolerance: 0.5 # add
+  #yaw_goal_tolerance: 0.5 # add
   xy_goal_tolerance: 0.4 # add
   escape_vel: -0.3 # add
   meter_scoring: true

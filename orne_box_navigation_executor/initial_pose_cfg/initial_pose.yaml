@@ -2,9 +2,17 @@
 #initial_pose_x: -3.7 # -4.3 for left
 #initial_pose_y: -5.5 # -2.5 for left
 #initial_pose_a: -2.85  #-2.85 # -2.3
-initial_pose_x: -4.3 # -4.3 for right
-initial_pose_y: -2.5 # -2.5 for right
-initial_pose_a: -2.85  #-2.85 # -2.3
+
+#initial_pose_x: -4.3
+#initial_pose_y: -2.5
+#initial_pose_a: -2.85
+
+
+initial_pose_x: -65.481 # -4.3 for right
+initial_pose_y: -81.809 # -2.5 for right
+initial_pose_a: 0.07915  #-2.85 # -2.3
+
+
 
 #initial_cov_xx: 0.0
 #initial_cov_yy: 0.0
