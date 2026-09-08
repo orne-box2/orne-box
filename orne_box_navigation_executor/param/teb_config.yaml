@@ -1,0 +1,24 @@
+TebLocalPlannerROS:
+  odom_topic: odom  # オドメトリトピック名
+  map_frame: odom
+  robot_model: diff_drive  # 2輪差動駆動ロボットの場合
+  max_vel_x: 0.5           # 最大並進速度
+  max_vel_theta: 1.0       # 最大回転速度
+  acc_lim_x: 0.8           # 並進加速度
+  acc_lim_theta: 2.0       # 回転加速度
+  min_turning_radius: 0.0  # 必要な場合、最小旋回半径を設定
+
+  # 障害物の設定
+  min_obstacle_dist: 0.2       # 障害物との最小距離 (m)
+  inflation_dist: 0.3          # 障害物回避のためのインフレーション距離
+  costmap_obstacles_behind_robot_dist: 1.0
+
+  # 経路の時間と空間の設定
+  dt_ref: 0.3       # 時間間隔 (秒)
+  dt_hysteresis: 0.1
+  min_samples: 3     # 最小サンプル数
+
+  # ゴール到達条件
+  yaw_goal_tolerance: 0.1  # ゴールでの向き許容範囲 (rad)
+  xy_goal_tolerance: 0.2   # ゴール位置許容範囲 (m)
+

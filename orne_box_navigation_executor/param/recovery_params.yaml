@@ -1,0 +1,69 @@
+#recovery_behaviors: [{name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery},
+ #                    {name: simple_lead_out, type: simple_lead_out/SimpleLeadOut},
+  #                   {name: rotate_recovery, type: rotate_recovery/RotateRecovery},
+   #                  {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}]
+# move_base common parameters
+clearing_rotation_allowed: true
+recovery_behavior_enabled: true
+
+# リカバリービヘイビア設定
+recovery_behaviors: 
+  # 塩沢設定
+  - name: aggressive_reset
+    type: clear_costmap_recovery/ClearCostmapRecovery
+  - name: simple_lead_out
+    type: simple_lead_out/SimpleLeadOut
+  - name: rotate_recovery
+    type: rotate_recovery/RotateRecovery
+  - name: conservative_reset
+    type: clear_costmap_recovery/ClearCostmapRecovery
+  
+  # 先輩設定（コストマップをクリアする）
+  - name: local_costmap_clear
+    type: clear_costmap_recovery/ClearCostmapRecovery
+  - name: global_costmap_clear
+    type: clear_costmap_recovery/ClearCostmapRecovery
+  - name: both_costmap_clear
+    type: clear_costmap_recovery/ClearCostmapRecovery
+
+# コストマップクリア設定（先輩の設定を反映）
+local_costmap_clear:
+  reset_distance: 0.0
+  force_updating: true
+  affected_maps: local
+  layer_names: 
+    - local_obstacles_layer
+
+global_costmap_clear:
+  reset_distance: 0.0
+  force_updating: true
+  affected_maps: global
+  layer_names: 
+    - global_obstacles_layer
+
+both_costmap_clear:
+  reset_distance: 0.0
+  force_updating: true
+  affected_maps: both
+  layer_names: 
+    - local_obstacles_layer
+    - global_obstacles_layer
+
+# 狭い通路などで動きが遅くなる場合の回復設定
+move_and_slow:
+  reset_distance: 1.0
+
+# その他の移動プランナー関連設定
+controller_frequency: 5.0
+controller_patience: 3.0
+planner_frequency: 0.0
+planner_patience: 5.0
+oscillation_timeout: 10.0
+oscillation_distance: 0.5
+
+# costmap の更新などに関連する設定
+shutdown_costmaps: false
+base_global_planner: global_planner/GlobalPlanner
+
+# 全体のリカバリー設定
+clearing_rotation_allowed: true

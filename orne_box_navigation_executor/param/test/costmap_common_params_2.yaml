@@ -1,0 +1,23 @@
+#max_obstacle_height: 0.60   
+#obstacle_range: 30.0       
+#raytrace_range: 9.0      # 必須
+inflation_radius: 0.3      
+#update_frequency: 3.0    
+#publish_frequency: 1.0   
+                      
+#resolution: 0.15                       
+
+observation_sources: scan #名前空間の定義 必須
+
+scan: # 必須　障害物避けるため
+  {
+    data_type: LaserScan,       # 必須
+    #topic: /scan,               
+    #marking: true,               
+    clearing: true,   # これは必須   コスト消せん   
+   # inf_is_valid: true,         
+    #min_obstacle_height: 0.15,    
+    #max_obstacle_height: 1.0,  
+    raytrace_range: 30.0, # たぶんいる  
+    obstacle_range: 30.0,
+  }

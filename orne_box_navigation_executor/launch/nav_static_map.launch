@@ -7,7 +7,7 @@
   <arg name="odom_topic" default="combined_odom"/>
   <arg name="emcl" default="2"/>
 
-  <include file="$(find orne_box_navigation_executor)/launch/move_base.launch">
+  <include file="$(find orne_box_navigation_executor)/launch/move_base_2.launch">
     <arg name="robot_name" value="$(arg robot_name)"/>
     <arg name="map_file" value="$(arg map_file)"/>
     <arg name="odom_topic" value="$(arg odom_topic)"/>

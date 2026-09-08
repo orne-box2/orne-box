@@ -1,7 +1,15 @@
-#image: tsudanuma.png
 image: 25_tsudanuma_rotate_200m_edit.png
+#image: tsukuba_all_2_edit_12_edit_14_re_17.pgm  # 4_before
+#image: tsukuba_200.pgm
 resolution: 0.0893
+#resolution: 0.17
+
 origin: [-100.000000, -172.000000, 0.000000]
+#origin: [-73.233618, -128.778289, 0.000000]
+#origin: [-602.0, -628.0, 0.0]
+#######origin: [-601.2, -432.9, 0.0]
+#origin: [-423.0, -444.5, 0.523]
+#origin: [-585.0, -176.5, 0.0]
 negate: 0
 occupied_thresh: 0.3
 free_thresh: 0.196
