@@ -3,7 +3,8 @@ local_costmap:
   robot_base_frame: base_link   # ロボットの基準となる座標フレーム。
   update_frequency: 5.0         # コストマップの更新頻度（Hz単位、1秒間に5回更新）。
   publish_frequency: 2.0        # 可視化用にコストマップを配信する頻度（Hz単位、1秒間に2回配信）。
-  static_map: false             # 静的地図を使用するかどうか（falseの場合、センサーデータから生成）。
+  static_map: true              # 静的地図（進入禁止エリアを含むmap_for_costmap）をstatic_layerとして読み込む。
+  map_topic: map_for_costmap    # 進入禁止エリアが書き込まれた地図トピック（global_costmapと同じものを使用）。
   rolling_window: true          # ロボットを中心にコストマップを動的に更新する設定。
   resolution: 0.05              # コストマップの解像度（1セルのサイズ、メートル単位、ここでは5cm四方）。
   width: 8.0                    # コストマップの横幅（メートル単位、ここでは8m）。
