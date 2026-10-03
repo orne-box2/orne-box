@@ -1,7 +1,7 @@
 #max_obstacle_height: 0.60   
 #obstacle_range: 30.0       
 #raytrace_range: 9.0      # 必須
-inflation_radius: 0.3      
+inflation_radius: 0.25   #0.3   
 #update_frequency: 3.0    
 #publish_frequency: 1.0   
                       
