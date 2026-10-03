@@ -1,7 +1,7 @@
 #shutdown_costmaps: false
 base_global_planner: global_planner/GlobalPlanner
 
-controller_frequency: 9.0 # 3.0
+controller_frequency: 3.0 # 3.0
 controller_patience: 3.0 
 
 planner_frequency: 0.0 

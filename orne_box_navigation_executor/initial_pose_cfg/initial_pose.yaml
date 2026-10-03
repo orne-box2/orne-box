@@ -8,9 +8,9 @@
 #initial_pose_a: -2.85
 
 
-initial_pose_x: -65.481 # -4.3 for right
-initial_pose_y: -81.809 # -2.5 for right
-initial_pose_a: 0.07915  #-2.85 # -2.3
+initial_pose_x: 494.179 # -4.3 for right
+initial_pose_y: 39.380 # -2.5 for right
+initial_pose_a: 0.332  #-2.85 # -2.3
 
 
 
