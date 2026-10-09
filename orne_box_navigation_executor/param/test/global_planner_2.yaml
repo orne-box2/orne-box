@@ -1,0 +1,3 @@
+GlobalPlanner:
+  planner_window_x: 5   # ← ここを小さい値に（例: waypoint間の通路幅+余白）
+  planner_window_y: 5
