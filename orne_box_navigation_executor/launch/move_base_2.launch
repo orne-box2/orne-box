@@ -8,6 +8,8 @@
 
   <node name="map_server_for_costmap" pkg="map_server" type="map_server" args="$(arg map_file)_for_costmap.yaml">
     <remap from="/map" to="/map_for_costmap"/>
+    <remap from="/change_map" to="/map_server_for_costmap/change_map"/>
+    <remap from="/static_map" to="/map_server_for_costmap/static_map"/>
     <param name="frame_id" value="map"/>
   </node>
 
