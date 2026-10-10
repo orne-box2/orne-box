@@ -11,6 +11,4 @@ local_costmap:
  # height: 8.0                  
   transform_tolerance: 0.3
   inflation_radius: 0.4
-  static_layer:
-    first_map_only: true   # clear_costmapsが呼ばれても進入禁止エリアの地図を保持し続ける
 
