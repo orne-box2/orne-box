@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
+  <arg name="use_queue_wait" default="true"/>
   <arg name="robot_name"     default="box"/>
   <arg name="map_file"       default="$(find orne_box_navigation_executor)/maps/tsukuba0926"/>
   <arg name="init_pos_file"  default="$(find orne_box_navigation_executor)/initial_pose_cfg/initial_pose.yaml"/>
@@ -13,6 +14,7 @@
   <!--param name="state" value="$(arg suspend)"/-->
   <!--arg name="suspend_file" default="$(find orne_box_strategy)/suspend_cfg/suspend.yaml"/-->
   <include file="$(find orne_box_navigation_executor)/launch/play_waypoints_nav_common.launch">
+    <arg name="use_queue_wait" value="$(arg use_queue_wait)"/>
     <arg name="robot_name"     value="$(arg robot_name)"/>
     <arg name="map_file"       value="$(arg map_file)"/>
     <arg name="init_pos_file"  value="$(arg init_pos_file)"/>

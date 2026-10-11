@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
+  <arg name="use_queue_wait" default="true"/>
   <arg name="robot_name"     default="box"/>
   <arg name="map_file"       default="$(find orne_box_navigation_executor)/maps/mymap"/>
   <arg name="init_pos_file"  default="$(find orne_box_navigation_executor)/initial_pose_cfg/initial_pose_$(arg robot_name).yaml"/>
@@ -10,13 +11,15 @@
   <arg name="emcl"           default="2"/>
 
   <include file="$(find orne_box_navigation_executor)/launch/nav_static_map.launch">
+    <arg name="cmd_vel" value="$(eval '/queue_wait/cmd_vel_in' if arg('use_queue_wait') else 'icart_mini/cmd_vel')"/>
+    <arg name="constraint_map_frame" value="$(eval 'map' if arg('use_queue_wait') else 'map_for_costmap')"/>
     <arg name="robot_name"    value="$(arg robot_name)"/>
     <arg name="map_file"      value="$(arg map_file)"/>
     <arg name="init_pos_file" value="$(arg init_pos_file)"/>
     <arg name="emcl"          value="$(arg emcl)"/>
   </include>
 
-  <node name="waypoints_nav" pkg="fulanghua_waypoints_nav" type="waypoints_nav" output="screen">
+  <node unless="$(arg use_queue_wait)" name="waypoints_nav" pkg="fulanghua_waypoints_nav" type="waypoints_nav" output="screen">
     <param name="filename" value="$(arg waypoints_file)"/>
     <param name="dist_err" value="$(arg dist_err)"/>
   </node>
