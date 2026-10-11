@@ -8,9 +8,10 @@
 #initial_pose_a: -2.85
 
 
-initial_pose_x: -65.481 # -4.3 for right
-initial_pose_y: -81.809 # -2.5 for right
-initial_pose_a: 0.07915  #-2.85 # -2.3
+# 3F: シミュレータと同じRViz番号0の位置から番号1を向いて開始する。
+initial_pose_x: -8.234682
+initial_pose_y: -12.819617
+initial_pose_a: 2.594839
 
 
 
