@@ -1,6 +1,6 @@
 TrajectoryPlannerROS:
   holonomic_robot: false
-  max_vel_x: 1.0 # 1.0
+  max_vel_x: 0.5 # 1.0
   min_vel_x: -0.3
 
   #acc_lim_x: 2.5
