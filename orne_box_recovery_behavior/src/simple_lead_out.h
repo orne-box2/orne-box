@@ -20,9 +20,29 @@
 #include <pcl/point_cloud.h>
 #include <angles/angles.h>
 #include <boost/thread.hpp>
+#include <atomic>
+#include <actionlib_msgs/GoalID.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <std_msgs/Bool.h>
 
 namespace simple_lead_out
 {
+  class RecoveryCancellation
+  {
+    std::atomic<unsigned long> generation_{0};
+    std::atomic<bool> active_{false}, running_{true};
+    ros::Subscriber cancel_sub_, active_sub_, running_sub_, goal_sub_, current_goal_sub_;
+    boost::mutex mutex_;
+    geometry_msgs::PoseStamped current_goal_;
+    bool goal_ready_=false;
+  public:
+    void initialize();
+    unsigned long generation() const { return generation_.load(); }
+    bool stopped(unsigned long generation) const {
+      return generation!=generation_.load()||active_.load()||!running_.load();
+    }
+  };
+
   class SimpleLeadOut : public nav_core::RecoveryBehavior
   {
     public:
@@ -44,8 +64,8 @@ namespace simple_lead_out
       ros::NodeHandle private_nh_, planner_nh_;
       costmap_2d::Costmap2DROS* local_costmap_;
       tf2_ros::Buffer* tf_;
-      message_filters::Subscriber<sensor_msgs::LaserScan>* scan_filter_sub_;
-      tf2_ros::MessageFilter<sensor_msgs::LaserScan>* scan_filter_;
+      message_filters::Subscriber<sensor_msgs::LaserScan>* scan_filter_sub_=nullptr;
+      tf2_ros::MessageFilter<sensor_msgs::LaserScan>* scan_filter_=nullptr;
       laser_geometry::LaserProjection projector_;
       std::map< std::string, int> frame_to_scan_;
       std::vector< sensor_msgs::LaserScan > scans_;
@@ -54,6 +74,7 @@ namespace simple_lead_out
       std::string base_frame_id_, scan_frame_id_;
 
       boost::recursive_mutex configuration_mutex_;
+      RecoveryCancellation cancellation_;
   };
 };
 #endif

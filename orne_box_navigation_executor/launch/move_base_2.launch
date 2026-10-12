@@ -27,7 +27,6 @@
     <rosparam file="$(find orne_box_navigation_executor)/param/test/base_local_planner_params_box_2.yaml" command="load"/>
     
     <rosparam file="$(find orne_box_navigation_executor)/param/test/recovery_params_2.yaml" command="load"/>
-    <!-- Queue control checks complete grids, including during a long stop. -->
-    <param name="local_costmap/always_send_full_costmap" value="true"/>
+
   </node>
 </launch>

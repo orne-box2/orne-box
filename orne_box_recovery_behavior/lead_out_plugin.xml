@@ -4,4 +4,6 @@
       simple lead out
     </description>
     </class>
+  <class name="simple_lead_out/InterruptibleRotate" type="simple_lead_out::InterruptibleRotate" base_class_type="nav_core::RecoveryBehavior"/>
+  <class name="simple_lead_out/DefaultClear" type="simple_lead_out::DefaultClear" base_class_type="nav_core::RecoveryBehavior"/>
 </library>

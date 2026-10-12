@@ -20,6 +20,9 @@ endif()
 
 find_package(catkin REQUIRED COMPONENTS
   move_base
+  actionlib_msgs
+  clear_costmap_recovery
+  rotate_recovery
   std_msgs
   geometry_msgs
   sensor_msgs
@@ -36,7 +39,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   #INCLUDE_DIRS include
-  LIBRARIES ${PROJECT_NAME}
+  LIBRARIES simple_lead_out
   CATKIN_DEPENDS
       roscpp
       pcl_ros
@@ -56,3 +59,6 @@ include_directories(
 
 add_library(simple_lead_out src/simple_lead_out.cpp)
 target_link_libraries(simple_lead_out ${catkin_LIBRARIES})
+
+install(TARGETS simple_lead_out LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+install(FILES lead_out_plugin.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
