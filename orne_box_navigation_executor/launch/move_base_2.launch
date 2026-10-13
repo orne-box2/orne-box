@@ -7,7 +7,9 @@
   <arg name="odom_topic" default="/odom"/>
   <arg name="cmd_vel"    default="/cmd_vel"/>
 
-  <node name="map_server_for_costmap" pkg="map_server" type="map_server" args="$(arg map_file)_for_costmap.yaml">
+  <node name="map_server_for_costmap" pkg="map_server" type="map_server"
+        launch-prefix="bash -c 'if [ -f &quot;$1&quot; ]; then exec &quot;$0&quot; &quot;$@&quot;; else exec &quot;$0&quot; &quot;${1%_for_costmap.yaml}.yaml&quot; &quot;${@:2}&quot;; fi'"
+        args="&quot;$(arg map_file)_for_costmap.yaml&quot;">
     <remap from="/map" to="/map_for_costmap"/>
     <param name="frame_id" value="$(arg constraint_map_frame)"/>
   </node>
