@@ -3,14 +3,14 @@
 #initial_pose_y: -5.5 # -2.5 for left
 #initial_pose_a: -2.85  #-2.85 # -2.3
 
-#initial_pose_x: -4.3
-#initial_pose_y: -2.5
-#initial_pose_a: -2.85
+initial_pose_x: 193.668
+initial_pose_y: 211.622
+initial_pose_a: -2.390
 
 
-initial_pose_x: 87.468 # -4.3 for right
-initial_pose_y: 56.097 # -2.5 for right
-initial_pose_a: -2.277  #-2.85 # -2.3
+#initial_pose_x: 87.468 # -4.3 for right
+#initial_pose_y: 56.097 # -2.5 for right
+#initial_pose_a: -2.277  #-2.85 # -2.3
 
 
 
