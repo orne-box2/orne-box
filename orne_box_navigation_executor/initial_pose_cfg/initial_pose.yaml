@@ -3,9 +3,9 @@
 #initial_pose_y: -5.5 # -2.5 for left
 #initial_pose_a: -2.85  #-2.85 # -2.3
 
-initial_pose_x: 193.668
-initial_pose_y: 211.622
-initial_pose_a: -2.390
+initial_pose_x: 9.676
+initial_pose_y: 14.898
+initial_pose_a: 2.623
 
 
 #initial_pose_x: 87.468 # -4.3 for right
