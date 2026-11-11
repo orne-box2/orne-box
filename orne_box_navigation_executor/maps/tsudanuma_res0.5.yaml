@@ -1,0 +1,9 @@
+image: tsudanuma_res0.5.pgm
+resolution: 0.5
+origin:
+- -236.71841177330055
+- -109.1459498424458
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
